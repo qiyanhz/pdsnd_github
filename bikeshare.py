@@ -25,7 +25,8 @@ def get_filters():
              break
           else:
               print('Invalid key in and please try again')
-    print('You just chose {}.'.format(city))
+    print('You just chose',city)
+
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month=''
@@ -36,7 +37,8 @@ def get_filters():
              break
           else:
              print('Please key in the right month or key in all')
-    print('You just chose {}.'.format(month))
+    print('You just chose',month)
+
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day=''
@@ -47,7 +49,9 @@ def get_filters():
              break
           else:
              print('Please key in the right weekday name or key in all')
-    print('You just chose {}.'.format(day))
+
+    print('You just chose',day)
+
 
     print('-'*40)
     return city, month, day
@@ -148,12 +152,12 @@ def trip_duration_stats(df):
     #caculate the duration
     df['Duration']=df['End Time']-df['Start Time']
     # get the total travel time
-    total_time=df['Duration'].sum()
+
     #get the mean travel time
-    mean_time=df['Duration'].mean()
+
     # TO DO: display total and mean travel time
-    print('The total travel time in the database is: ',total_time)
-    print('The average travel time in the database is: ',mean_time)
+    print('The total travel time in the database is: ',df['Duration'].sum())
+    print('The average travel time in the database is: ',df['Duration'].mean())
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -172,9 +176,9 @@ def user_stats(df):
 
     # TO DO: Display counts of gender, only chicago and new york city
     try:
-        user_gender_types=df['Gender'].value_counts()
+        gender_types=df['Gender'].value_counts()
         print('counts of gender types: ')
-        print(user_gender_types)
+        print(gender_types)
     except KeyError:
         print('This city does not have gender information.')
     # TO DO: Display earliest, most recent, and most common year of birth
