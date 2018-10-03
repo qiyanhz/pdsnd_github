@@ -10,5 +10,8 @@ This project is using **python** to provide users an interactive way to review b
 ## Files Used
 Three data files are _chicago.csv, new_york_city.csv and washington.csv_.
 
+## Software You Need
+To run this interactive program, you will need to install Python. You also need command line.
+
 ## Credits
 Thanks for [Udacity](https://eu.udacity.com/) classroom material.
