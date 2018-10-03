@@ -148,12 +148,12 @@ def trip_duration_stats(df):
     #caculate the duration
     df['Duration']=df['End Time']-df['Start Time']
     # get the total travel time
-    total_time=df['Duration'].sum()
+    
     #get the mean travel time
-    mean_time=df['Duration'].mean()
+
     # TO DO: display total and mean travel time
-    print('The total travel time in the database is: ',total_time)
-    print('The average travel time in the database is: ',mean_time)
+    print('The total travel time in the database is: ',df['Duration'].sum())
+    print('The average travel time in the database is: ',df['Duration'].mean())
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
