@@ -11,4 +11,4 @@ This project is using **python** to provide users an interactive way to review b
 Three data files are _chicago.csv, new_york_city.csv and washington.csv_.
 
 ## Credits
-Thanks for Udacity classroom material.
+Thanks for [Udacity](https://eu.udacity.com/) classroom material.
