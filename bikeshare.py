@@ -172,9 +172,9 @@ def user_stats(df):
 
     # TO DO: Display counts of gender, only chicago and new york city
     try:
-        user_gender_types=df['Gender'].value_counts()
+        gender_types=df['Gender'].value_counts()
         print('counts of gender types: ')
-        print(user_gender_types)
+        print(gender_types)
     except KeyError:
         print('This city does not have gender information.')
     # TO DO: Display earliest, most recent, and most common year of birth
