@@ -16,39 +16,39 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs  
+    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city=''
     while city=='':
           city_key_in=input('Please say what city you want to see: Chicago, New York City or Washington? ').lower()
           if city_key_in in ['chicago', 'new york city', 'washington']:
              city=city_key_in
              break
-          else: 
+          else:
               print('Invalid key in and please try again')
-    print('You just chose {}.'.format(city))
-           
+    print('You just chose',city)
+
     # TO DO: get user input for month (all, january, february, ... , june)
     month=''
     while month=='':
           month_key_in=input('Please say if you want to see all or want to filter on a month (use month full name like January, February,etc)? ').lower()
           if month_key_in in ['january', 'february', 'march', 'april', 'may', 'june', 'all']:
-             month=month_key_in           
+             month=month_key_in
              break
           else:
              print('Please key in the right month or key in all')
-    print('You just chose {}.'.format(month))
-    
+    print('You just chose',month)
+
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     day=''
     while day=='':
           day_key_in=input('Please say if you want to see all or want to filter on a day (use weekday name like Monday,Tuesday,etc)? ').lower()
           if day_key_in in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday','sunday','all']:
-             day=day_key_in           
+             day=day_key_in
              break
           else:
              print('Please key in the right weekday name or key in all')
-    print('You just chose {}.'.format(day))
-    
+    print('You just chose',day)
+
     print('-'*40)
     return city, month, day
 
@@ -99,18 +99,18 @@ def time_stats(df):
        months = ['January', 'February', 'March', 'April', 'May', 'June']
        popular_month=months[month_number-1]
        print('The most common month is: ', popular_month)
-   
+
     # TO DO: display the most common day of week
     # only run when filter is in all days
     if df['day_of_week'].nunique()!=1:
        popular_weekday= df['day_of_week'].mode()[0]
        print('The most common day of week is: ', popular_weekday)
-  
+
     # TO DO: display the most common start hour;run anytime when have input
     df['hour'] =df['Start Time'].dt.hour
     popular_hour = df['hour'].mode()[0]
     print('the most common start hour is: ', popular_hour)
-   
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
